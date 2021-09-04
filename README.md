@@ -28,3 +28,11 @@ You now have access to another method, setActiveFill(color:str)  This method wil
 
 ## Update: Class Arc 3/7/2017
 Class Arc gives you the ability to create 3 different types of arc object.  Class Arc inherits from _ _BBox_ which in turn creates a section of an oval.  Class Arc requires 4 parameters with an option for a 5th.  Arc(Point p1, Point p2, integer startingAngle, integer angleOfRotation, [ String style ])  Angle measures are in degrees. Positive rotations are counter clockwise, negative rotations are clockwise.  Optional 5th parameter can take the values of: "Sector", "Arc", or "Chord" 
+
+## Update: Middle click & Scroll detection
+- **getMouseMiddle()**: Pauses for the user to middle-click their mouse in the window and returns where the mouse was middle-clicked as a Point object.  
+Example: `clickPoint = win.getMouseMiddle()`
+- **checkMouseMiddle()**: Similar to getMouseMiddle(), but does not pause for a user middle-click. Returns the last point where the mouse was middle-clicked or None if the window has not been middle-clicked since the previous call to checkMouseMiddle or getMouseMiddle.  
+Example: `clickPoint = win.checkMouseMiddle()` *Note: clickPoint may be None!*
+- **checkScroll()**: Returns an integer depending on user's last scroll action. Positive value if scrolled up, negative if scrolled down, zero if no scroll action since last check. 
+Example: `scrollDir = win.checkScroll()` *Note: does not return a point!*
