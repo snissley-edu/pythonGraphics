@@ -7,6 +7,14 @@ This library give students the abilty to create basic shapes, widgets, and anima
 ## How To Use
 Place the graphics.py file in the same directory as your current project that is using the library.  To use the classes of the library, best practice is to import it into your current project by typing from graphics import * as the first line of code in your python file. This will give you access to the graphics module in your current python file and any file the imports from that file.
 
+## Update: Middle click & Scroll detection 4/5/2020
+- **getMouseMiddle()**: Pauses for the user to middle-click their mouse in the window and returns where the mouse was middle-clicked as a Point object.  
+Example: `clickPoint = win.getMouseMiddle()`
+- **checkMouseMiddle()**: Similar to getMouseMiddle(), but does not pause for a user middle-click. Returns the last point where the mouse was middle-clicked or None if the window has not been middle-clicked since the previous call to checkMouseMiddle or getMouseMiddle.  
+Example: `clickPoint = win.checkMouseMiddle()` *Note: clickPoint may be None!*
+- **checkScroll()**: Returns an integer depending on user's last scroll action. Positive value if scrolled up, negative if scrolled down, zero if no scroll action since last check. 
+Example: `scrollDir = win.checkScroll()` *Note: does not return a point!*
+
 ## Update: Basic Collision Detection Added
 Static methods for collision detection have been added to class Rectangle and class Circle.  Check the Wiki for more specific information on how to use them.
 
